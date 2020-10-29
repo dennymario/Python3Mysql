@@ -84,7 +84,9 @@ for view_order in order_result:
     print(view_order)
 """
 #Menggunakan perintah delete untuk menghapus Record dari table
-sql_delete="DELETE FROM customers WHERE address= 'Simpang Kanan'"
-mycursor.execute(sql_delete)
+#Menghindari SQL Injection dengan menggunakan escape string
+sql_delete="DELETE FROM customers WHERE address= %s"
+addr=("Km 31",)
+mycursor.execute(sql_delete,addr)
 MyDb.commit()
 print(mycursor.rowcount, "record(s) deleted!!")
