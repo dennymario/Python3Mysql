@@ -6,7 +6,7 @@ MyDb = mysql.connector.connect(
     password="admin",
     database="mydatabase"
 )
-#print(MyDb)
+print(MyDb)
 #Membuat database
 mycursor = MyDb.cursor()
 #Jalankan Perintah untuk membuat database
@@ -59,8 +59,11 @@ Perintah execeute digunakan untuk memasukan satu data saja
 #Select dari table Customers
 #variabel View berguna untuk membuat view
 #result menampilkan isi table
+"""
 mycursor.execute("SELECT * FROM customers")
 view = mycursor.fetchall()
 
 for result in view:
     print(result)
+"""
+#Menggunakan perintah where
