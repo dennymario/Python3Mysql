@@ -10,3 +10,8 @@ pegawai_db = mysql.connector.connect(
     password="admin",
 )
 print(pegawai_db)
+#buat variabel untuk menjadi selector di database
+selector=pegawai_db.cursor()
+#membuat database db_pegawai dan table tbl_pegawai
+selector.execute("CREATE DATABASE db_pegawai")
+
