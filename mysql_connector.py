@@ -76,8 +76,15 @@ for view_result in where_result:
     print(view_result)
 """ 
 #Menggunakan perintah ORDER BY untuk mengurutkan data
+"""
 sql_order="SELECT * FROM customers ORDER BY NAME DESC"
 mycursor.execute(sql_order)
 order_result=mycursor.fetchall()
 for view_order in order_result:
     print(view_order)
+"""
+#Menggunakan perintah delete untuk menghapus Record dari table
+sql_delete="DELETE FROM customers WHERE address= 'Simpang Kanan'"
+mycursor.execute(sql_delete)
+MyDb.commit()
+print(mycursor.rowcount, "record(s) deleted!!")
