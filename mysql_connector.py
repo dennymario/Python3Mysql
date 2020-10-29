@@ -67,9 +67,17 @@ for result in view:
     print(result)
 """
 #Menggunakan perintah where untuk melakukan search
+"""
 sql_where="SELECT * FROM customers WHERE address = 'Binjai'"
 mycursor.execute(sql_where)
 where_result = mycursor.fetchall()
 
 for view_result in where_result:
     print(view_result)
+""" 
+#Menggunakan perintah ORDER BY untuk mengurutkan data
+sql_order="SELECT * FROM customers ORDER BY NAME"
+mycursor.execute(sql_order)
+order_result=mycursor.fetchall()
+for view_order in order_result:
+    print(view_order)
