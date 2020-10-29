@@ -30,3 +30,11 @@ selector.execute("SHOW TABLES")
 for tbl in selector:
     print(tbl)
 """
+#Insert data kedalam tbl_pegawai
+sql_insert = "INSERT INTO tbl_pegawai (nama, gaji, posisi) VALUE(%s, %s, %s)"
+val_insert = ('Denny', 5000000,'admin')
+#Execute dan Commit kedalam tbl_pegawai
+selector.execute(sql_insert, val_insert)
+#Commit
+pegawai_db.commit()
+print("Data berhasil disimpan, ID: ",selector.lastrowid) 
