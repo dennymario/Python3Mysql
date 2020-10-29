@@ -8,10 +8,25 @@ pegawai_db = mysql.connector.connect(
     host="localhost",
     user="admin",
     password="admin",
+    database="db_pegawai"
 )
 print(pegawai_db)
 #buat variabel untuk menjadi selector di database
 selector=pegawai_db.cursor()
 #membuat database db_pegawai dan table tbl_pegawai
+"""
 selector.execute("CREATE DATABASE db_pegawai")
-
+"""
+#Cek database
+"""
+selector.execute("SHOW DATABASES")
+for db in selector:
+    print(db)
+"""
+#Membuat tabel tbl_pegawai dan membuat view untuk tbl_pegawai
+"""
+selector.execute("CREATE TABLE tbl_pegawai (id INT AUTO_INCREMENT PRIMARY KEY,nama VARCHAR(255),gaji FLOAT,posisi VARCHAR(255))")
+selector.execute("SHOW TABLES")
+for tbl in selector:
+    print(tbl)
+"""
