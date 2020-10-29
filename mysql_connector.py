@@ -76,7 +76,7 @@ for view_result in where_result:
     print(view_result)
 """ 
 #Menggunakan perintah ORDER BY untuk mengurutkan data
-sql_order="SELECT * FROM customers ORDER BY NAME"
+sql_order="SELECT * FROM customers ORDER BY NAME DESC"
 mycursor.execute(sql_order)
 order_result=mycursor.fetchall()
 for view_order in order_result:
